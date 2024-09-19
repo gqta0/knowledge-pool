@@ -374,21 +374,21 @@ Sử dụng các thuật toán GC phù hợp: Chọn thuật toán GC phù hợp
 
 ### Các giai đoạn trong vòng đời của một đối tượng
 1. Tạo đối tượng:
-    **Khởi tạo**: Khi bạn sử dụng từ khóa new để tạo một đối tượng, một vùng nhớ trên heap sẽ được cấp phát để lưu trữ các trường và phương thức của đối tượng đó.
-    **Khởi tạo các trường**: Các trường của đối tượng được khởi tạo theo giá trị mặc định hoặc giá trị được cung cấp trong constructor.
-    **Gọi constructor**: Constructor của đối tượng được gọi để thực hiện các công việc khởi tạo khác.
+    - **Khởi tạo**: Khi bạn sử dụng từ khóa new để tạo một đối tượng, một vùng nhớ trên heap sẽ được cấp phát để lưu trữ các trường và phương thức của đối tượng đó.
+    - **Khởi tạo các trường**: Các trường của đối tượng được khởi tạo theo giá trị mặc định hoặc giá trị được cung cấp trong constructor.
+    - **Gọi constructor**: Constructor của đối tượng được gọi để thực hiện các công việc khởi tạo khác.
 
 2. Sử dụng đối tượng:
 
-    **Truy cập các trường**: Bạn có thể truy cập và thay đổi giá trị của các trường của đối tượng.
-    **Gọi các phương thức**: Bạn có thể gọi các phương thức của đối tượng để thực hiện các hành động.
-    **Truyền tham chiếu**: Bạn có thể truyền tham chiếu đến đối tượng cho các đối tượng khác.
+    - **Truy cập các trường**: Bạn có thể truy cập và thay đổi giá trị của các trường của đối tượng.
+    - **Gọi các phương thức**: Bạn có thể gọi các phương thức của đối tượng để thực hiện các hành động.
+    - **Truyền tham chiếu**: Bạn có thể truyền tham chiếu đến đối tượng cho các đối tượng khác.
 
 3. Hủy đối tượng:
 
-    **Không còn tham chiếu**: Khi không còn bất kỳ tham chiếu nào trỏ đến đối tượng, đối tượng đó được coi là rác.
-    **Garbage Collector**: Bộ thu rác (Garbage Collector) của JVM sẽ tự động tìm và thu hồi các đối tượng rác này.
-    **Finalize**: Trước khi đối tượng bị thu hồi, phương thức finalize() (nếu có) của đối tượng sẽ được gọi một lần. Tuy nhiên, không nên dựa vào finalize() để giải phóng tài nguyên, vì nó không được đảm bảo sẽ được gọi.
+    - **Không còn tham chiếu**: Khi không còn bất kỳ tham chiếu nào trỏ đến đối tượng, đối tượng đó được coi là rác.
+    - **Garbage Collector**: Bộ thu rác (Garbage Collector) của JVM sẽ tự động tìm và thu hồi các đối tượng rác này.
+    - **Finalize**: Trước khi đối tượng bị thu hồi, phương thức finalize() (nếu có) của đối tượng sẽ được gọi một lần. Tuy nhiên, không nên dựa vào finalize() để giải phóng tài nguyên, vì nó không được đảm bảo sẽ được gọi.
 
 ``` Java
 public class Person {
